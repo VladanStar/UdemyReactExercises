@@ -7,7 +7,7 @@ const AddPlayer = (props) => {
     event.preventDefault();
   };
   return (
-    <Card clasName={classes.input}>
+    <Card className={classes.input}>
       <form onSubmit={addPlayerHandler}>
         <label htmlFor="playername">Player name</label>
         <input type="text" id="playername" />
