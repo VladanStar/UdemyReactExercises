@@ -10,9 +10,16 @@ const AddPlayer = (props) => {
 
   const addPlayerHandler = (event) => {
       event.preventDefault();
-      console.log(enteredPlayerName)
-      console.log(enteredPlayerAge)
-      console.log(enteredPlayerPosition);
+
+      if (enteredPlayerName.trim().length === 0
+          || enteredPlayerAge.trim().length === 0
+          || enteredPlayerPosition.trim().length === 0) {
+          return;    
+      }
+      if (+enteredPlayerAge < 1) {
+          return;
+      }
+      props.onAddPlayer(enteredPlayerName, enteredPlayerAge, enteredPlayerPosition)
       setEnteredPlayerAge('')
       setEnteredPlayerName('');
       setEnteredPlayerPosition('');   
